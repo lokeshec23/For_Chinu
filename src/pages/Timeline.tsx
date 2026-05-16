@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { PageTransition } from '@/src/components/PageTransition';
-import { MessageCircle, Heart, Camera, PartyPopper, Users, Star, ArrowRight } from 'lucide-react';
+import { MessageCircle, Heart, GraduationCap, Handshake, Briefcase, Code, Calendar, Sparkles, Smile, Users, Cake, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const TIMELINE = [
@@ -17,7 +17,7 @@ const TIMELINE = [
     title: 'Final Exam ku Apram Vandha Sweet Twist',
     description: 'Today ennoda final semister oda final exam mudinjuthu veeduku poga bus ku wait panidu irutha, apo again una patha and unnoda company oda HR number vaaguna...',
     date: 'May 05, 2023',
-    icon: Users,
+    icon: GraduationCap,
     color: 'bg-indigo-100 text-indigo-600',
   },
   {
@@ -25,7 +25,7 @@ const TIMELINE = [
     title: 'Aniki dhan Therinjuthu... Nee Oru Comeback Friend nu',
     description: "After apply job in AB, I came for interview unnoda pakathula ukaji first round test attend panna happinees innum apdiya iruku...EOD la enaku therichi inime ennoda life la oru comeback friend vara poranu 🤝🏻",
     date: 'Sep 22, 2023',
-    icon: Heart,
+    icon: Handshake,
     color: 'bg-red-100 text-red-600',
   },
   {
@@ -33,7 +33,7 @@ const TIMELINE = [
     title: 'Office First Day la Kidaicha Oru Deva Thoothan 🤍',
     description: 'Ennoda life maraka mudiyath moments la ennode first office AB la first day, office poga nenu enaku help panna, As ennoda life la vantha Deva thoothan Nee',
     date: 'Aug 03, 2023',
-    icon: Camera,
+    icon: Briefcase,
     color: 'bg-teal-100 text-teal-600',
   },
   {
@@ -41,7 +41,7 @@ const TIMELINE = [
     title: 'Nee Just Friend Ila nu Purinja Naal 🌸',
     description: 'Nambakula vantha first sanda... maraka matta That UI issuse, atha sanda la 2 days nenu enkita pesala apo tha onnu pujichithu nenu enaku just friend ila. You are something beynod that',
     date: 'Dec 08, 2023',
-    icon: PartyPopper,
+    icon: Code,
     color: 'bg-orange-100 text-orange-600',
   },
   {
@@ -49,7 +49,7 @@ const TIMELINE = [
     title: 'Nisha Iruka Edam la Lokesh Kandipa Irupan ❤️',
     description: 'Aprom one years neriya sanda, neriya care, neriya talks, life la happines and oru girl epdi treat pananu respect pannu nu therichiten... as one place la nisha irutha anga tha lokesh nu irupanu solra aalavku namba friendship iruthathu',
     date: 'June 15, 2025',
-    icon: Star,
+    icon: Calendar,
     color: 'bg-yellow-100 text-yellow-600',
   },
   {
@@ -57,7 +57,7 @@ const TIMELINE = [
     title: 'Words la Solla Mudiyatha Oru Feeling 🤍',
     description: "On This day suddely I feel something different, I cant express that feeling in words, Unmela oru feeling mind full la orra confusion... but still nanu atha feelings haa unkita sollala ",
     date: 'July 03, 2025',
-    icon: Star,
+    icon: Sparkles,
     color: 'bg-yellow-100 text-yellow-600',
   },
   {
@@ -65,7 +65,7 @@ const TIMELINE = [
     title: 'Miracles Unmaya nu Purinja Maraka Mudiyatha Naal ✨',
     description: 'Ennoda Life la maraka mudiyatha athan naal vanduthu, Life is full of surprises and miracles nu soluvanga, athu unmaya iruku nu aniku dhan purinjuthu 🤍, ennoda half and reamaining life haa unoda spend panna mudiu panna day, that is our Nose Day',
     date: 'july 04, 2025',
-    icon: Star,
+    icon: Smile,
     color: 'bg-yellow-100 text-yellow-600',
   },
   {
@@ -73,26 +73,25 @@ const TIMELINE = [
     title: 'En Another Half ah Kandupidicha Naal 🤍',
     description: 'On next day OMG, I found my another half, My wify, My life partner, My Chinu ma. Namaba panna First 😘 day',
     date: 'July 05, 2025',
-    icon: Star,
-    color: 'bg-yellow-100 text-yellow-600',
+    icon: Heart,
+    color: 'bg-red-100 text-red-600',
   },
   {
     id: 10,
     title: 'HR Number la Aarambichu Heart vara Vandhuta ❤️',
     description: 'Aprm nadathu ellam yedo dream mari iruku chinu ma. Stranger la school la iruthu, normal friend haa one day HR number vaagi, aprm best friend aagi, konjam konjam ma una naa pudichika, nenu ena purijika, epo ennoda full la nee tha iruka',
     date: 'July 06, 2025',
-    icon: Star,
-    color: 'bg-yellow-100 text-yellow-600',
+    icon: Users,
+    color: 'bg-indigo-100 text-indigo-600',
   },
   {
     id: 11,
     title: 'Shadow pola Life Long Un Kooda 😌',
     description: 'Today ennoda devathiku piratha naal, Happy Birthday chinu ma, 🎂🥳🎉 shadow pola unkuda life long irutha chinu ma unnoda full happinees nanu karanama irupa. Love you sooooo much 😘😘😘',
     date: 'May 19, 2026',
-    icon: Star,
-    color: 'bg-yellow-100 text-yellow-600',
+    icon: Cake,
+    color: 'bg-pink-100 text-pink-600',
   },
-
 ];
 
 export default function Timeline() {
