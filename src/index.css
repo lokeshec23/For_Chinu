@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-cursive: "Dancing Script", cursive;
+  --color-bg-pink: #FFF0F3;
+  --color-accent-rose: #FF8E9E;
+  --color-text-dark: #4A1D24;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-pink text-text-dark overflow-x-hidden transition-colors duration-500;
+    cursor: default;
+  }
+
+  /* Custom Scrollbar for a romantic look */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-accent-rose);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FF7D8F;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/40 backdrop-blur-[20px] border border-white/50 shadow-[0_8px_32px_rgba(255,142,158,0.15)] rounded-3xl;
+  }
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-[20px] border border-white/50 shadow-[0_8px_32px_rgba(255,142,158,0.15)] rounded-3xl;
+  }
+  .text-glow {
+    text-shadow: 0 0 15px rgba(255, 142, 158, 0.5);
+  }
+  .bg-romantic-gradient {
+    background: radial-gradient(circle at top left, #FFF0F3 0%, #FFE4E9 100%);
+  }
+  .handwriting {
+    @apply font-cursive;
+  }
+  .serif {
+    @apply font-serif;
+  }
+  .aura-bg {
+    @apply absolute w-[600px] h-[600px] rounded-full filter blur-[80px] pointer-events-none z-0 opacity-40;
+    background: radial-gradient(circle, rgba(255,142,158,0.4) 0%, rgba(255,255,255,0) 70%);
+  }
+  .polaroid {
+    @apply bg-white p-3 pb-10 shadow-[0_10px_25px_rgba(0,0,0,0.1)] transition-transform duration-300;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}

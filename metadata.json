@@ -1,0 +1,8 @@
+{
+  "name": "Happy Birthday Chinu ❤️",
+  "description": "A sentimental digital scrapbook and romantic birthday surprise experience for Chinu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
