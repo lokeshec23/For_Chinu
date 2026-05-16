@@ -22,7 +22,7 @@ export default function Letter() {
           <p className="font-cursive text-2xl text-pink-400 mt-2">Straight from my heart to yours...</p>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ rotate: -2, y: 50, opacity: 0 }}
           whileInView={{ rotate: 0, y: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -31,11 +31,11 @@ export default function Letter() {
           {/* Paper Texture Effect */}
           <div className="absolute inset-0 bg-[#fdfbf7] shadow-2xl rounded-sm transform group-hover:scale-[1.01] transition-transform duration-500" />
           <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/notebook.png')] pointer-events-none" />
-          
+
           <div className="relative p-8 md:p-16 space-y-8 min-h-[600px] border-l-4 border-pink-200">
             <div className="flex justify-between items-center border-b border-pink-100 pb-4">
               <span className="font-serif text-lg text-pink-900/40 italic">Dear Nisha (My Chinu),</span>
-              <span className="font-sans text-xs font-bold uppercase tracking-widest text-pink-400">May 16, 2026</span>
+              <span className="font-sans text-xs font-bold uppercase tracking-widest text-pink-400">May 19, 2026</span>
             </div>
 
             <div className="font-cursive text-2xl md:text-3xl text-pink-900 leading-[1.8] space-y-6">
@@ -53,20 +53,20 @@ export default function Letter() {
             </div>
 
             <div className="pt-12 flex flex-col items-end border-t border-pink-100">
-               <motion.div
-                 initial={{ opacity: 0 }}
-                 animate={{ opacity: 1 }}
-                 transition={{ delay: 10 }}
-                 className="text-right"
-               >
-                 <p className="font-cursive text-2xl text-pink-400 mb-2 italic">With endless love,</p>
-                 <p className="font-serif text-3xl font-bold text-pink-600">Pattu ❤️</p>
-                 <div className="mt-4 flex gap-2 justify-end">
-                    <Heart className="text-pink-300 fill-pink-300" size={16} />
-                    <Heart className="text-pink-400 fill-pink-400" size={16} />
-                    <Heart className="text-pink-500 fill-pink-500" size={16} />
-                 </div>
-               </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 10 }}
+                className="text-right"
+              >
+                <p className="font-cursive text-2xl text-pink-400 mb-2 italic">With endless love,</p>
+                <p className="font-serif text-3xl font-bold text-pink-600">Pattu ❤️</p>
+                <div className="mt-4 flex gap-2 justify-end">
+                  <Heart className="text-pink-300 fill-pink-300" size={16} />
+                  <Heart className="text-pink-400 fill-pink-400" size={16} />
+                  <Heart className="text-pink-500 fill-pink-500" size={16} />
+                </div>
+              </motion.div>
             </div>
 
             {/* Floaties on letter */}
