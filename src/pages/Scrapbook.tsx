@@ -78,74 +78,63 @@ export default function Scrapbook() {
           </motion.button>
         </div>
 
-        {/* Nested Staggered Grid Layout */}
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12">
-          {MEMORIES.map((memory, index) => {
-            // Calculate a "steep" offset based on index to create a cascading effect
-            const offset = (index % 3) * 40; // Horizontal shift
-            const yOffset = (index % 5) * 20; // Vertical shift
+        {/* Proper Masonry Collage Layout */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-8">
+          {MEMORIES.map((memory, index) => (
+            <motion.div
+              key={memory.id}
+              initial={{ opacity: 0, scale: 0.9, rotate: memory.rotation * 2 }}
+              whileInView={{ 
+                opacity: 1, 
+                scale: 1,
+                rotate: memory.rotation 
+              }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                delay: (index % 10) * 0.05, 
+                duration: 0.8,
+                type: "spring",
+                stiffness: 100
+              }}
+              whileHover={{
+                scale: 1.05,
+                rotate: 0,
+                zIndex: 50,
+                transition: { duration: 0.3 }
+              }}
+              className="break-inside-avoid bg-white p-3 shadow-[0_15px_35px_rgba(0,0,0,0.1)] rounded-sm border-[6px] border-white group relative mb-8"
+            >
+              {/* Decorative Elements */}
+              <div className="absolute top-2 right-2 w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100 z-20 shadow-lg">
+                <Heart className="text-white fill-white" size={14} />
+              </div>
 
-            return (
-              <motion.div
-                key={memory.id}
-                initial={{ opacity: 0, y: 100, rotate: memory.rotation * 2 }}
-                whileInView={{ 
-                  opacity: 1, 
-                  y: yOffset, 
-                  x: offset * (index % 2 === 0 ? 1 : -1),
-                  rotate: memory.rotation 
-                }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ 
-                  delay: (index % 10) * 0.1, 
-                  duration: 1,
-                  type: "spring",
-                  stiffness: 50
-                }}
-                whileHover={{
-                  scale: 1.1,
-                  rotate: 0,
-                  zIndex: 50,
-                  transition: { duration: 0.4, type: "spring", stiffness: 300 }
-                }}
-                className={`bg-white p-4 shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-sm border-8 border-white group relative 
-                  ${memory.size === 'large' ? 'md:col-span-1' : ''}
-                  transition-all duration-500
-                `}
-              >
-                {/* Decorative Elements */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 z-20 shadow-lg">
-                  <Heart className="text-pink-500 fill-pink-500" size={20} />
+              <div className="overflow-hidden bg-gray-50 rounded-xs">
+                <img
+                  src={memory.url}
+                  alt={memory.caption}
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="mt-4 pb-2 text-center space-y-1">
+                <p className="font-cursive text-xl text-pink-900 leading-tight">
+                  {memory.caption}
+                </p>
+                <div className="flex items-center justify-center gap-1.5 text-pink-200">
+                  <Camera size={12} />
+                  <span className="text-[9px] font-bold uppercase tracking-[0.2em] font-sans">Moment #{memory.id}</span>
                 </div>
+              </div>
 
-                <div className="overflow-hidden bg-gray-100 aspect-[4/5] sm:aspect-auto rounded-xs">
-                  <img
-                    src={memory.url}
-                    alt={memory.caption}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                </div>
-
-                <div className="mt-6 text-center space-y-3">
-                  <p className="font-cursive text-2xl text-pink-900 leading-tight">
-                    {memory.caption}
-                  </p>
-                  <div className="flex items-center justify-center gap-2 text-pink-300">
-                    <Camera size={16} className="animate-pulse" />
-                    <span className="text-[11px] font-bold uppercase tracking-widest font-sans opacity-60">Forever Moment</span>
-                  </div>
-                </div>
-
-                {/* Tape effects with nested look */}
-                <div className="absolute -top-3 left-1/4 w-16 h-6 bg-pink-50/60 backdrop-blur-[2px] border border-white/40 -rotate-12 shadow-sm" />
-                <div className="absolute -bottom-2 right-1/4 w-12 h-5 bg-white/40 backdrop-blur-[2px] border border-white/30 rotate-6 shadow-sm" />
-                
-                {/* Background "Nested" frame shadow effect */}
-                <div className="absolute inset-0 -z-10 bg-pink-50/30 blur-2xl rounded-full scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </motion.div>
-            );
-          })}
+              {/* Tape effects with nested look */}
+              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-5 bg-white/40 backdrop-blur-[1px] border border-white/20 -rotate-2 shadow-sm z-10" />
+              
+              {/* Background Glow */}
+              <div className="absolute inset-0 -z-10 bg-pink-100/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </motion.div>
+          ))}
         </div>
 
         <div className="mt-20 p-20 text-center glass rounded-[3rem] border-white max-w-3xl mx-auto border-dashed border-2">
