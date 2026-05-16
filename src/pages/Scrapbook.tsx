@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { PageTransition } from '@/src/components/PageTransition';
 import { Heart, Camera } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useMemo } from 'react';
 
 const MEMORIES = [
   { id: 1, url: '/photos/20240309_102645 1.jpg', caption: 'Memory from Mar 2024 ❤️', rotation: -2, size: 'large' },
@@ -59,6 +60,11 @@ const MEMORIES = [
 export default function Scrapbook() {
   const navigate = useNavigate();
 
+  // Shuffle memories on every reload
+  const shuffledMemories = useMemo(() => {
+    return [...MEMORIES].sort(() => Math.random() - 0.5);
+  }, []);
+
   return (
     <PageTransition>
       <div className="max-w-7xl mx-auto py-10 px-4">
@@ -71,7 +77,7 @@ export default function Scrapbook() {
 
         {/* Clean Collage Layout with No Overlaps */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-12 space-y-12">
-          {MEMORIES.map((memory, index) => (
+          {shuffledMemories.map((memory, index) => (
             <motion.div
               key={memory.id}
               initial={{ opacity: 0, y: 20 }}
