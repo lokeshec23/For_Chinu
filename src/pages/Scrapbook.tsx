@@ -62,47 +62,36 @@ export default function Scrapbook() {
   return (
     <PageTransition>
       <div className="max-w-7xl mx-auto py-10 px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-4">
-          <div className="space-y-2 text-center md:text-left">
+        <div className="flex flex-col items-center justify-center mb-16 text-center">
+          <div className="space-y-2">
             <h2 className="font-serif text-5xl md:text-6xl font-bold text-pink-600">Our Scrapbook</h2>
             <p className="font-cursive text-2xl text-pink-400">Captured moments, everlasting love...</p>
           </div>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('/timeline')}
-            className="px-8 py-3 bg-white border-2 border-pink-100 text-pink-600 rounded-full font-bold shadow-sm flex items-center gap-2 hover:bg-pink-50 transition-colors"
-          >
-            <span>Next Chapter</span>
-            <Heart size={18} />
-          </motion.button>
         </div>
 
-        {/* Proper Masonry Collage Layout */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-8">
+        {/* Clean Collage Layout with No Overlaps */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-12 space-y-12">
           {MEMORIES.map((memory, index) => (
             <motion.div
               key={memory.id}
-              initial={{ opacity: 0, scale: 0.9, rotate: memory.rotation * 2 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ 
                 opacity: 1, 
-                scale: 1,
-                rotate: memory.rotation 
+                y: 0,
+                rotate: memory.rotation * 0.5 // Extremely subtle rotation to prevent corner overlaps
               }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "-20px" }}
               transition={{ 
                 delay: (index % 10) * 0.05, 
-                duration: 0.8,
-                type: "spring",
-                stiffness: 100
+                duration: 0.6
               }}
               whileHover={{
                 scale: 1.05,
                 rotate: 0,
-                zIndex: 50,
-                transition: { duration: 0.3 }
+                zIndex: 10,
+                transition: { duration: 0.2 }
               }}
-              className="break-inside-avoid bg-white p-3 shadow-[0_15px_35px_rgba(0,0,0,0.1)] rounded-sm border-[6px] border-white group relative mb-8"
+              className="break-inside-avoid bg-white p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-sm border-[8px] border-white group relative mb-12"
             >
               {/* Decorative Elements */}
               <div className="absolute top-2 right-2 w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100 z-20 shadow-lg">
@@ -113,12 +102,12 @@ export default function Scrapbook() {
                 <img
                   src={memory.url}
                   alt={memory.caption}
-                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
 
-              <div className="mt-4 pb-2 text-center space-y-1">
+              <div className="mt-5 pb-2 text-center space-y-1">
                 <p className="font-cursive text-xl text-pink-900 leading-tight">
                   {memory.caption}
                 </p>
@@ -128,20 +117,29 @@ export default function Scrapbook() {
                 </div>
               </div>
 
-              {/* Tape effects with nested look */}
-              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-5 bg-white/40 backdrop-blur-[1px] border border-white/20 -rotate-2 shadow-sm z-10" />
-              
-              {/* Background Glow */}
-              <div className="absolute inset-0 -z-10 bg-pink-100/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Tape effect - centered and contained within the card's vertical space */}
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 bg-white/60 backdrop-blur-[2px] border border-white/20 -rotate-1 shadow-sm z-10" />
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-20 p-20 text-center glass rounded-[3rem] border-white max-w-3xl mx-auto border-dashed border-2">
-          <Heart className="mx-auto mb-6 text-pink-300" size={48} />
-          <p className="font-serif text-3xl italic text-pink-900/60 leading-relaxed">
-            "Photos are just triggers. Real memories are stored in my heart, playing on repeat every time I close my eyes."
-          </p>
+        <div className="mt-20 flex flex-col items-center gap-12">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/timeline')}
+            className="px-12 py-4 bg-pink-500 text-white rounded-full font-bold shadow-xl flex items-center gap-3 hover:bg-pink-600 transition-all transform hover:-translate-y-1"
+          >
+            <span className="text-lg">Continue Our Story</span>
+            <Heart size={20} className="fill-white" />
+          </motion.button>
+
+          <div className="p-20 text-center glass rounded-[3rem] border-white max-w-3xl mx-auto border-dashed border-2">
+            <Heart className="mx-auto mb-6 text-pink-300" size={48} />
+            <p className="font-serif text-3xl italic text-pink-900/60 leading-relaxed">
+              "Photos are just triggers. Real memories are stored in my heart, playing on repeat every time I close my eyes."
+            </p>
+          </div>
         </div>
       </div>
     </PageTransition>
