@@ -51,7 +51,7 @@ export default function Hero() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            Happy Birthday <br/> Chinu 🎂❤️
+            Happy Birthday <br/> Chinu ma...🎂❤️
           </motion.h1>
           
           <motion.p

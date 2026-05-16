@@ -3,19 +3,15 @@ import { Music, Volume2, VolumeX, SkipForward, SkipBack } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '@/src/lib/utils';
 
-// SONG LIST - Add your local files to /public/assets/music/ or /src/assets/music/
+// SONG LIST - Add your local files to /public/songs/
 const SONG_LIST = [
   {
-    title: "Unakku Thaan ❤️",
-    url: "/assets/music/song1.mp3"
+    title: "Kadhaigalai Pesum ❤️",
+    url: "/songs/Kadhaigalai Pesum.mp3"
   },
   {
-    title: "Ennodu Nee Irundhaal",
-    url: "/assets/music/song2.mp3"
-  },
-  {
-    title: "Kadhaippoma",
-    url: "/assets/music/song3.mp3"
+    title: "Munbe Va",
+    url: "/songs/Munbe Va.mp3"
   }
 ];
 
@@ -68,19 +64,19 @@ export function MusicPlayer() {
               </span>
             </div>
             <div className="flex items-center gap-1">
-              <button 
+              <button
                 onClick={prevSong}
                 className="p-1.5 hover:bg-pink-100 rounded-full text-pink-600 transition-colors"
               >
                 <SkipBack size={16} />
               </button>
-              <button 
+              <button
                 onClick={togglePlay}
                 className="p-2.5 bg-pink-500 rounded-full text-white hover:bg-pink-600 transition-all shadow-lg hover:scale-110 active:scale-95"
               >
                 {isPlaying ? <Volume2 size={18} /> : <VolumeX size={18} />}
               </button>
-              <button 
+              <button
                 onClick={nextSong}
                 className="p-1.5 hover:bg-pink-100 rounded-full text-pink-600 transition-colors"
               >
