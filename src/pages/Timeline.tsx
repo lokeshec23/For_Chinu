@@ -6,52 +6,93 @@ import { useNavigate } from 'react-router-dom';
 const TIMELINE = [
   {
     id: 1,
-    title: 'First Talk',
-    description: 'Enakku innum nyabagam iruku... andha first "Hi" message. Tension la typo pannen 🙈',
-    date: 'Dec 15, 2024',
+    title: 'Antha Oru ‘Sorry’ dhan Ellathukum Start',
+    description: 'Enaku therila chinu ma, namba school time la evol pesunathu ila but I remeber Keerthana akka mrg la unkita nanu pesuna first work "Sorry" 🤣',
+    date: 'Feb 22, 2023',
     icon: MessageCircle,
     color: 'bg-blue-100 text-blue-600',
   },
   {
     id: 2,
-    title: 'Best Friends?',
-    description: 'Namma hours kanakka pesunom. Ellam share pannunom. Comfort zone correct ah amanjuchu.',
-    date: 'Jan 20, 2024',
+    title: 'Final Exam ku Apram Vandha Sweet Twist',
+    description: 'Today ennoda final semister oda final exam mudinjuthu veeduku poga bus ku wait panidu irutha, apo again una patha and unnoda company oda HR number vaaguna...',
+    date: 'May 05, 2023',
     icon: Users,
     color: 'bg-indigo-100 text-indigo-600',
   },
   {
     id: 3,
-    title: 'That Special Day',
-    description: 'Realised that I can\'t live without you. Andha confession... "I Love You Chinu" ❤️',
-    date: 'Feb 14, 2024',
+    title: 'Aniki dhan Therinjuthu... Nee Oru Comeback Friend nu',
+    description: "After apply job in AB, I came for interview unnoda pakathula ukaji first round test attend panna happinees innum apdiya iruku...EOD la enaku therichi inime ennoda life la oru comeback friend vara poranu 🤝🏻",
+    date: 'Sep 22, 2023',
     icon: Heart,
     color: 'bg-red-100 text-red-600',
   },
   {
     id: 4,
-    title: 'First Selfie',
-    description: 'Nee oru side paathu pose kudutha, naan mattum dummy ah unna paathutu irundhen. Cute click!',
-    date: 'Mar 10, 2024',
+    title: 'Office First Day la Kidaicha Oru Deva Thoothan 🤍',
+    description: 'Ennoda life maraka mudiyath moments la ennode first office AB la first day, office poga nenu enaku help panna, As ennoda life la vantha Deva thoothan Nee',
+    date: 'Aug 03, 2023',
     icon: Camera,
     color: 'bg-teal-100 text-teal-600',
   },
   {
     id: 5,
-    title: 'First Big Fight',
-    description: 'Kovama irundhutu sapdalam la nu sonna paaru... Anga thaan sanda mudinjuchu 😂',
-    date: 'May 05, 2024',
+    title: 'Nee Just Friend Ila nu Purinja Naal 🌸',
+    description: 'Nambakula vantha first sanda... maraka matta That UI issuse, atha sanda la 2 days nenu enkita pesala apo tha onnu pujichithu nenu enaku just friend ila. You are something beynod that',
+    date: 'Dec 08, 2023',
     icon: PartyPopper,
     color: 'bg-orange-100 text-orange-600',
   },
   {
     id: 6,
-    title: 'Birthday Celebration',
-    description: 'Together forever... Innaiku un special day. Indha timeline innum perusa pogum ♾️',
-    date: 'Today',
+    title: 'Nisha Iruka Edam la Lokesh Kandipa Irupan ❤️',
+    description: 'Aprom one years neriya sanda, neriya care, neriya talks, life la happines and oru girl epdi treat pananu respect pannu nu therichiten... as one place la nisha irutha anga tha lokesh nu irupanu solra aalavku namba friendship iruthathu',
+    date: 'June 15, 2025',
     icon: Star,
     color: 'bg-yellow-100 text-yellow-600',
   },
+  {
+    id: 7,
+    title: 'Words la Solla Mudiyatha Oru Feeling 🤍',
+    description: "On This day suddely I feel something different, I cant express that feeling in words, Unmela oru feeling mind full la orra confusion... but still nanu atha feelings haa unkita sollala ",
+    date: 'July 03, 2025',
+    icon: Star,
+    color: 'bg-yellow-100 text-yellow-600',
+  },
+  {
+    id: 8,
+    title: 'Miracles Unmaya nu Purinja Maraka Mudiyatha Naal ✨',
+    description: 'Ennoda Life la maraka mudiyatha athan naal vanduthu, Life is full of surprises and miracles nu soluvanga, athu unmaya iruku nu aniku dhan purinjuthu 🤍, ennoda half and reamaining life haa unoda spend panna mudiu panna day, that is our Nose Day',
+    date: 'july 04, 2025',
+    icon: Star,
+    color: 'bg-yellow-100 text-yellow-600',
+  },
+  {
+    id: 9,
+    title: 'En Another Half ah Kandupidicha Naal 🤍',
+    description: 'On next day OMG, I found my another half, My wify, My life partner, My Chinu ma. Namaba panna First 😘 day',
+    date: 'July 05, 2025',
+    icon: Star,
+    color: 'bg-yellow-100 text-yellow-600',
+  },
+  {
+    id: 10,
+    title: 'HR Number la Aarambichu Heart vara Vandhuta ❤️',
+    description: 'Aprm nadathu ellam yedo dream mari iruku chinu ma. Stranger la school la iruthu, normal friend haa one day HR number vaagi, aprm best friend aagi, konjam konjam ma una naa pudichika, nenu ena purijika, epo ennoda full la nee tha iruka',
+    date: 'July 06, 2025',
+    icon: Star,
+    color: 'bg-yellow-100 text-yellow-600',
+  },
+  {
+    id: 11,
+    title: 'Shadow pola Life Long Un Kooda 😌',
+    description: 'Today ennoda devathiku piratha naal, Happy Birthday chinu ma, 🎂🥳🎉 shadow pola unkuda life long irutha chinu ma unnoda full happinees nanu karanama irupa. Love you sooooo much 😘😘😘',
+    date: 'May 19, 2026',
+    icon: Star,
+    color: 'bg-yellow-100 text-yellow-600',
+  },
+
 ];
 
 export default function Timeline() {
@@ -77,9 +118,8 @@ export default function Timeline() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, type: 'spring' }}
-                className={`relative flex items-center justify-between flex-col md:flex-row ${
-                  index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                }`}
+                className={`relative flex items-center justify-between flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                  }`}
               >
                 {/* Content Card */}
                 <div className="w-full md:w-[42%] ml-12 md:ml-0">
