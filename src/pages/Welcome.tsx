@@ -53,7 +53,10 @@ export default function Welcome() {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => navigate('/hero')}
+          onClick={() => {
+            window.dispatchEvent(new Event('startMusic'));
+            navigate('/hero');
+          }}
           className="group relative px-10 py-5 bg-pink-500 text-white rounded-full font-bold text-xl shadow-2xl shadow-pink-300/50 flex items-center gap-3 overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity" />

@@ -46,14 +46,29 @@ export function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.play().catch(() => {
-          setIsPlaying(false);
+    const handleStart = () => setIsPlaying(true);
+    window.addEventListener('startMusic', handleStart);
+    return () => window.removeEventListener('startMusic', handleStart);
+  }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isPlaying) {
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay blocked - wait for user interaction
+          const startPlay = () => {
+            audio.play().catch(() => {});
+            window.removeEventListener('click', startPlay);
+          };
+          window.addEventListener('click', startPlay);
         });
-      } else {
-        audioRef.current.pause();
       }
+    } else {
+      audio.pause();
     }
   }, [isPlaying, currentSongIndex]);
 
