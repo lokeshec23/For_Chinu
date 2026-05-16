@@ -12,6 +12,30 @@ const SONG_LIST = [
   {
     title: "Munbe Va",
     url: "/songs/Munbe Va.mp3"
+  },
+  {
+    title: "Pirai Thedum Iravil ",
+    url: "/songs/Pirai thedum iravile.mp3"
+  },
+  {
+    title: "Yale Yale Maruthu",
+    url: "/songs/Suthamula Uthami.mp3"
+  },
+  {
+    title: "Thuli Thuli Mazhai",
+    url: "/songs/Thuli thuli.mp3"
+  },
+  {
+    title: "Ayyayo Nenju Alayuthadi",
+    url: "/songs/ayyayo nenju alayuthadi.mp3"
+  },
+  {
+    title: "Engeyo Partha Mayakkam",
+    url: "/songs/Engeyo Partha Mayakkam.mp3"
+  },
+  {
+    title: "Manmadhane Nee",
+    url: "/songs/Manmadhane Nee.mp3"
   }
 ];
 
